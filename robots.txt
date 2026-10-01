@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vieiraemarquesadvogados.com/divorcio-sao-paulo/sitemap.xml
