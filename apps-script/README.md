@@ -12,5 +12,8 @@ Planilha: https://docs.google.com/spreadsheets/d/1PAulss8q6FpJ2_8HfxoVOPkYV92NKa
 4. Autorize o acesso e copie a URL que termina em `/exec`.
 5. Em `index.html`, substitua o valor `default` de `endpointPlanilha` por essa URL.
 
-Teste rápido: abra `URL/exec?nome=Teste&email=t@t.com&whatsapp=11999999999` no navegador;
-deve aparecer `{"status":"ok"}` e uma nova linha na planilha.
+Cada lead novo também dispara um e-mail para os endereços em `EMAIL_AVISO`;
+o resultado do envio fica na coluna `notificacao`.
+
+Teste rápido: no editor, rode a função `testar` (autorize planilha e e-mail na primeira vez).
+Deve aparecer `ok` no log, uma nova linha na planilha e o e-mail de aviso.
