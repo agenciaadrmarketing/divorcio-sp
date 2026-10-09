@@ -14,7 +14,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="preload" as="image" href="uploads/seo/advogado-divorcio-sp-acordo-partilha-guarda.webp" imagesrcset="uploads/seo/advogado-divorcio-sp-acordo-partilha-guarda-mobile.webp 900w, uploads/seo/advogado-divorcio-sp-acordo-partilha-guarda.webp 1920w" imagesizes="100vw" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&amp;display=swap" rel="stylesheet"></noscript>
 <title>Advogado de Divórcio em SP | Todo o Estado | Vieira &amp; Marques</title>
 <meta name="language" content="pt-BR">
 <meta name="theme-color" content="#0B0B0B">
@@ -1080,10 +1081,13 @@ class Component extends DCLogic {
     this.setState((s) => ({ vpsIndex: (s.vpsIndex + 1) % 4 }));
     this._vpsStart();
   }
-  componentDidUpdate(prev, prevState) {
-    if (this._lenis && prevState.formOpen !== this.state.formOpen) {
-      if (this.state.formOpen) this._lenis.stop(); else this._lenis.start();
+  componentDidUpdate() {
+    // O runtime não repassa prevState: guarda o último valor na instância.
+    const aberto = this.state.formOpen;
+    if (this._lenis && this._formOpenPrev !== aberto) {
+      if (aberto) this._lenis.stop(); else this._lenis.start();
     }
+    this._formOpenPrev = aberto;
   }
   componentWillUnmount() {
     clearTimeout(this._lenisT);
