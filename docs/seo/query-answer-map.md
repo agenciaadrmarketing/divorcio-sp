@@ -1,6 +1,6 @@
 # Mapa busca → resposta — Divórcio SP
 
-Página: https://vieiraemarquesadvogados.com/divorcio-sao-paulo/ · revisão de 2026-10-09 · fonte: `index.html`
+Página: https://divorcio-sp.vieiraemarquesadvogados.com/ · revisão de 2026-10-09 · fonte: `index.html`
 
 | Intenção de busca | Onde a página responde | Estado |
 |---|---|---|

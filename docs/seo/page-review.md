@@ -1,6 +1,6 @@
 # Revisão SEO da página — Divórcio SP
 
-- **URL canônica:** https://vieiraemarquesadvogados.com/divorcio-sao-paulo/
+- **URL canônica:** https://divorcio-sp.vieiraemarquesadvogados.com/
 - **Data da captura:** 2026-10-09 (arquivo `index.html` do repositório; página ainda não verificada ao vivo)
 - **Idioma / público:** pt-BR, pessoas em qualquer cidade do estado de SP que querem se divorciar
 - **Papel da página:** landing page de serviço (captação de leads), indexável
@@ -38,7 +38,7 @@
 
 | Item | Por que não mudei | Próximo passo |
 |---|---|---|
-| `robots.txt` está em `/divorcio-sao-paulo/` | Buscadores só leem o `robots.txt` da raiz do domínio; este arquivo é ignorado | Adicionar `Sitemap: https://vieiraemarquesadvogados.com/divorcio-sao-paulo/sitemap.xml` ao robots.txt da raiz **ou** enviar o sitemap no Search Console |
+| `robots.txt` está em `/divorcio-sao-paulo/` | Buscadores só leem o `robots.txt` da raiz do domínio; este arquivo é ignorado | Adicionar `Sitemap: https://divorcio-sp.vieiraemarquesadvogados.com/sitemap.xml` ao robots.txt da raiz **ou** enviar o sitemap no Search Console |
 | Favicon | O logo é horizontal (1848×410), não serve como ícone | Navegadores usam `/favicon.ico` da raiz do domínio; confirmar que o site principal tem um |
 | `aggregateRating` (5,0 / 179) no schema da própria empresa | Google não exibe estrelas para avaliações auto-declaradas de LocalBusiness/Organization; não é penalidade, mas não gera rich result | Manter só se o número bater com o Perfil da Empresa no Google |
 | Conteúdo renderizado no cliente | O texto existe no HTML cru, mas com placeholders `{{ }}` em partes dinâmicas (depoimentos, formulário); Google renderiza JS, outros robôs não | Longo prazo: exportar HTML pré-renderizado |
