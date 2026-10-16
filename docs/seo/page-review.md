@@ -40,7 +40,7 @@
 |---|---|---|
 | `robots.txt` está em `/divorcio-sao-paulo/` | Buscadores só leem o `robots.txt` da raiz do domínio; este arquivo é ignorado | Adicionar `Sitemap: https://vieiraemarquesadvogados.com/divorcio-sao-paulo/sitemap.xml` ao robots.txt da raiz **ou** enviar o sitemap no Search Console |
 | Favicon | O logo é horizontal (1848×410), não serve como ícone | Navegadores usam `/favicon.ico` da raiz do domínio; confirmar que o site principal tem um |
-| `aggregateRating` (5,0 / 159) no schema da própria empresa | Google não exibe estrelas para avaliações auto-declaradas de LocalBusiness/Organization; não é penalidade, mas não gera rich result | Manter só se o número bater com o Perfil da Empresa no Google |
+| `aggregateRating` (5,0 / 179) no schema da própria empresa | Google não exibe estrelas para avaliações auto-declaradas de LocalBusiness/Organization; não é penalidade, mas não gera rich result | Manter só se o número bater com o Perfil da Empresa no Google |
 | Conteúdo renderizado no cliente | O texto existe no HTML cru, mas com placeholders `{{ }}` em partes dinâmicas (depoimentos, formulário); Google renderiza JS, outros robôs não | Longo prazo: exportar HTML pré-renderizado |
 | React/Babel/Lenis via unpkg | Se o unpkg falhar, a página fica preta; Babel no navegador pesa no PageSpeed | Hospedar os arquivos junto da LP |
 | Endereço em Boituva vs. "todo o estado" | Coerente com o texto da página ("Sede em Boituva, atendimento em todo o estado") | Nenhum |
