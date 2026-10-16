@@ -19,7 +19,7 @@
     ["Dracena", -51.53, -21.48], ["Lins", -49.74, -21.68], ["Jaú", -48.56, -22.30]
   ];
 
-  const D3 = ["https://unpkg.com/d3@7.9.0/dist/d3.min.js", "sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"];
+  const D3 = ["vendor/d3.min.js"];
   const ESTADO = "https://servicodados.ibge.gov.br/api/v3/malhas/estados/35?formato=application/vnd.geo+json&qualidade=intermediaria";
   const MUNICIPIOS = "https://servicodados.ibge.gov.br/api/v3/malhas/estados/35?formato=application/vnd.geo+json&intrarregiao=municipio&qualidade=minima";
 
@@ -39,7 +39,7 @@
     const found = document.querySelector('script[src="' + D3[0] + '"]');
     if (found && found.__p) return found.__p;
     const s = found || document.createElement("script");
-    s.src = D3[0]; s.integrity = D3[1]; s.crossOrigin = "anonymous";
+    s.src = D3[0];
     s.__p = new Promise((res, rej) => { s.onload = res; s.onerror = rej; });
     if (!found) document.head.appendChild(s);
     return s.__p;
@@ -73,11 +73,16 @@
         <svg viewBox="0 0 640 512" role="img" aria-label="Mapa do estado de São Paulo, com destaque para a capital, atendida de forma online"></svg>`;
       this._svg = root.querySelector("svg");
       this._tentativas = 0;
-      this._garantir();
-      this._io = new IntersectionObserver((es) => {
-        if (es.some((e) => e.isIntersecting)) this._garantir();
-      }, { rootMargin: "300px" });
-      this._io.observe(this);
+      // Só baixa d3 e a malha do IBGE quando o mapa está perto da tela: ele fica no fim da página
+      // e disputava banda com a imagem do topo durante o carregamento.
+      if ("IntersectionObserver" in window) {
+        this._io = new IntersectionObserver((es) => {
+          if (es.some((e) => e.isIntersecting)) this._garantir();
+        }, { rootMargin: "400px" });
+        this._io.observe(this);
+      } else {
+        this._garantir();
+      }
     }
 
     disconnectedCallback() {

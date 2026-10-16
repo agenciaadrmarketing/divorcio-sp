@@ -1,0 +1,7 @@
+{
+  "name": "divorcio-sp-tools",
+  "private": true,
+  "type": "module",
+  "description": "Ferramentas de build da LP (não vão para a Hostinger).",
+  "dependencies": { "playwright-core": "^1.49.0" }
+}
